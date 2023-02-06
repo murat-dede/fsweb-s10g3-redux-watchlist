@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import Movie from "./components/Movie";
 import FavMovie from "./components/FavMovie";
-
+import { useSelector } from "react-redux";
 function App() {
   const [sira, setSira] = useState(0);
-  const favMovies = [];
+  //const favMovies = [];
+  const favMovies = useSelector((store)=>store.favorites);
 
   function sonrakiFilm() {
     setSira(sira + 1);
